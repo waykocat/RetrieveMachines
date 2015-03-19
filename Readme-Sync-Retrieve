@@ -1,0 +1,47 @@
+
+  _________                               __________        __         .__                    
+ /   _____/__.__. ____   ____             \______   \ _____/  |________|__| _______  __ ____  
+ \_____  <   |  |/    \_/ ___\    ______   |       _// __ \   __\_  __ \  |/ __ \  \/ // __ \ 
+ /        \___  |   |  \  \___   /_____/   |    |   \  ___/|  |  |  | \/  \  ___/\   /\  ___/ 
+/_______  / ____|___|  /\___  >            |____|_  /\___  >__|  |__|  |__|\___  >\_/  \___  >
+        \/\/         \/     \/                    \/     \/                    \/          \/ 
+
+		**************************************************************
+	  
+	  Sync-Retrieve is tool that allows the user to retrieve all VMs in all physical machines
+	  in the platform. It consists in a script that does the retrieve that can be configured 
+	  easily with crontab to launch it periodically
+	  
+	  The parameters needed to use the script are the following
+
+	    - Username and Password of your AbiquoPlatform 
+		  E.g => user:Admin pass:Admin
+		  
+	    - URL from AbiquoPlatform
+		  
+		  
+	  To add them use
+
+	    --source -s	:  URL from AbiquoPlatform 
+	    
+	    -user or -u	:  user:password
+	  
+	  *note: the order of the options does not modify the result*
+	  
+	  To install dependencies:
+          
+          gem install bundler
+          bundle install
+          
+	  
+	  ruby vm-retrieve.rb -u user -p password -s https://<ip/domain>/api/admin/datacenters
+
+
+	  Examples with crontab
+	  
+	   Retrieve each hour: 0 */1 * * * /path-to-script + parameters
+	   Retrieve each 30' : 0,30 * * * * /path-to-script + parameters
+           
+          For comments and support: albert.navarro[at]abiquo.com
+
+      
